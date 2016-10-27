@@ -9,47 +9,62 @@ import java.util.*;
 public class cmdShell
 
 {
+	private static Commands prompt;
 
  public static void main(String[] args) throws java.io.IOException {
 
   String commandLine;
+  prompt =new Commands();
 
   BufferedReader console = new BufferedReader
 
     (new InputStreamReader(System.in));
-
+try{
 while (true) {
 
   // read what the user entered
   System.out.print("BadiiShell>");
+ // System.out.println();
 
-  commandLine = console.readLine(); {
+  commandLine = console.readLine(); 
 
-  // if the user entered a return, just loop again
+  /** if the user entered a return, just loop again**/
+	  	switch(commandLine){
+	  	
+	  		case "" :
+	  			continue;
+	
 
-  if (commandLine.equals("")) {
+	  		case "exit":
+	  			
+	  	System.out.println("Goodbye");
 
-        continue;
+	  	System.exit(0);
+	  			break;
+	  			
+	  		case "cal":   //IO Error
+	  			cal.cal();
+	  		
+	  		break;
+	  		
+	  		
+	  		
+	  		case "echo":
+		  		echo.echo();
+		  		break;
+	  		case "pwd":
+		  		pwd.pwd();
+		  		break;
+		  		/*
+	  		case "":
+		  		
+		  		break;
+	  		*/
+	  			
 
-  }
-
-  else if(commandLine.equalsIgnoreCase("exit"))  {
-
-  System.out.println("Goodbye");
-
-  System.exit(0);
-
-  }
-
-  else if(commandLine.equalsIgnoreCase("quit"))  {
-
-  System.out.println("Goodbye");
-
-  System.exit(0);
-
-  }
-
-
+}
+	  
+	  
   // Split the string into a String Array
 
    
@@ -94,8 +109,13 @@ while (true) {
 
     }
 
-   }
+   
+}
 
+catch(IOException e)
+{
+	System.out.println("simpleshell-");
+}
   }
 
  }
