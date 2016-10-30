@@ -3,7 +3,6 @@ package Shell;
 
 
 import java.io.*;
-
 import java.util.*;
 
 public class cmdShell
@@ -11,7 +10,7 @@ public class cmdShell
 {
 	private static Commands prompt;
 
- public static void main(String[] args) throws java.io.IOException {
+ public static void main(String[] args) throws java.io.IOException, InterruptedException {
 
   String commandLine;
   prompt =new Commands();
@@ -55,12 +54,33 @@ while (true) {
 	  		case "pwd":
 		  		pwd.pwd();
 		  		break;
-		  		/*
-	  		case "":
 		  		
+	  		case "wc":
+		  		wc.wc();
 		  		break;
-	  		*/
-	  			
+		  		
+				
+	  		case "mkdir":
+		  		mkdir.mkdir();
+		  		break;
+	  		
+		  		
+	  		case "ls":
+		  		ls.ls();
+		  		break;
+		  		
+	  		case "dir":
+		  		ls.ls();
+		  		break;
+		  		
+	  		case "grep":
+		  		grep.grep(args);
+		  		break;
+		  		
+	  		case "cp":
+		  		cp.cp(args);
+		  		break;
+
 
 }
 	  
@@ -114,7 +134,9 @@ while (true) {
 
 catch(IOException e)
 {
-	System.out.println("simpleshell-");
+	System.out.println("simpleshell-30% done");
+	
+	//hide error
 }
   }
 
